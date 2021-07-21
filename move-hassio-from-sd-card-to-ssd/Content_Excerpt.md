@@ -1,0 +1,1 @@
+If you're asking why HomeAssistant is running slow or crashing, the CPU temperature and the SD card are likely to the culprits. This post focuses on fixing slow & unreliable SD card problem by running HomeAssistant on an SSD by cloning your SD Card into the SSD. This way you don't have to re-do your configs & in

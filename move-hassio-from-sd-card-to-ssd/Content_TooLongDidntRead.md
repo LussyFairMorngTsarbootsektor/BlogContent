@@ -1,0 +1,12 @@
+- Download [BalenaEtcher](https://www.balena.io/etcher)
+- Connect you SSD to windows 10 computer
+- Connect your SD Card to windows 10 computer
+- Launch BalenaEtcher
+- Select "Clone"
+- Select source (SD Card)
+- Select destination (SSD). Be sure NOT to pick the RIGHT disk drive if you have multiple !
+- Start the process
+- Connect SSD to raspberry
+- Ensure you have a powerful enough power supply (official rpi alim ~3A is a good target)
+- Boot the raspberry & profit !
+
