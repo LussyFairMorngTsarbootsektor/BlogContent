@@ -1,0 +1,1 @@
+Why GIT can serve as a database back-end but is only suitable when certain specific requirements are met. A relational database is not always needed ! See what some of these requirements are, what tradeoffs this implies and why this solution suit the needs of my blog.

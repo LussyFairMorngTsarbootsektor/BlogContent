@@ -1,0 +1,5 @@
+﻿{
+  "Title": "301 redirection using Kubernetes ingress NGINX",
+  "Description": "Configure NGINX ingress to performe 301 redirections from your site's old domain name to the new one with a single line of config !",
+  "UrlFragment": "301-redirection-nginx-ingress"
+}

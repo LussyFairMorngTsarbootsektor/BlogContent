@@ -1,0 +1,1 @@
+What is a good code comment and what makes a bad one. When should comments be used, when are they useless, why you should care and some tips on writing better comments !

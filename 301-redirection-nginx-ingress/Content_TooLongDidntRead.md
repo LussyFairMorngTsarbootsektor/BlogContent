@@ -1,0 +1,1 @@
+Create a new ingress controller. Add the following annotation `nginx.ingress.kubernetes.io/permanent-redirect: 'https://newdomain'`. Replace the url target. Point your DNS to your ingress load balancer. 

@@ -1,0 +1,1 @@
+For SEO reasons, it is always good to provide an explicit 301 redirection from the old domain to the new one when your site's URL changes (or has multiple domains). This can easily be done with the help of an ingress NGINX controller and a single line of annotation !

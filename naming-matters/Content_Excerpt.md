@@ -1,0 +1,1 @@
+What makes for good symbols (variable, functions, classes) naming conventions. Why the name you chose for your symbols matters and how to pick a better name.
