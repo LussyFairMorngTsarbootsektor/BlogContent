@@ -1,0 +1,5 @@
+﻿{
+  "Title": "Home automation: Bed occupancy sensor",
+  "Description": "Full wheatstone brdige, HX711 & ESP8266 to make your bed into a human presence detection system !",
+  "UrlFragment": "home-automation-bed-occupancy-sensor-hx711-esp8266"
+}

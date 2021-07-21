@@ -1,0 +1,1 @@
+Connect load cells as per [the diagram](https://github.com/LussyFairMorngTsarbootsektor/BedOccupancySensor/blob/main/Schematics/BedSensor.svg), upload [this code]() to the ESP8266 using ESPHome and add [this config]() in your Home Assistant nore-red config
