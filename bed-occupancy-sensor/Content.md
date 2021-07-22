@@ -18,7 +18,7 @@ Home assistant, ESPHome, Node RED
 
 Top & Bottom whites go together. Left and right blacks go together. Reds go to HX711
 
-![Easy wiring 3-wire load cell to HX711 and ESP8266](Content.assets/BedSensor.svg)
+![Easy wiring 3-wire load cell to HX711 and ESP8266](Assets/BedSensor.svg)
 
 ## ESPHome node YAML configuration & uploading
 
@@ -157,4 +157,4 @@ As per my post about [naming conventions & self-commenting code](https://danger-
 ### Dynamic wakeup time
 Replace the hard-coded wakeup time with a dynamic API call to a calendar/microsoft teams for example. This would allow the alarm to be triggered at different times depending on the next day's schedule =
 ### Sleep cycles/quality analysis & sync wakeup
-Using this system, it would be possible to analyse sleep patterns to determine the sleep stage & trigger the alarm at the best time for a seemless wakeup
+Using this system, it would be possible to analyse sleep patterns to determine the sleep stage & trigger the alarm at the best time for a seemless wakeus
