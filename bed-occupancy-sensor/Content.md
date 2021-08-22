@@ -72,34 +72,27 @@ sequenceDiagram
 	participant Lights as Wifi Lights
 	participant Notification as HA Push notification
 	
-	activate HA
 	Trigger ->> HA: Start workflow
+	activate HA
     HA ->> Bed: Check occupancy
     activate Bed
-	alt
-        Bed -->> HA: Bed is empty
-        note right of HA: Human is not home/already out of bed
-        HA -x Notification: Send alarm reminder
-        note left of Notification: Wake human up even if they're not home
-  	else
-        Bed -->> HA: Bed is occupied
-        HA -x Lights: Turn on
-        activate Lights
-        note right of Lights: Lights are never turned off        
-        HA -x Sound: Set volume to 30
-        HA -x Sound: Play music
-        activate Sound        
-        loop Increase volume until human out of bed
-        	HA ->> HA: Wait 30s
-        	HA -x Sound: Increase volume 
-        end
-        Bed -->> HA: Bed unoccupied
-        HA -x Sound: Turn off music
-        deactivate Sound
-        deactivate Lights
-	end
+    Bed -->> HA: Bed is occupied
+    deactivate Bed
+    HA ->> Lights: Turn on
+	activate Lights
+    Lights -->> HA : Lights turned on
+    deactivate Lights
+    note right of Lights: Lights are never turned off   
+    HA ->> +Sound: Set volume to 30
+    Sound -->>- HA : Volume set
+    HA ->>+ Sound: Start music
+    Sound -->>- HA : Music started   
+    HA ->>+ Bed: Check occupancy
+    Bed -->>- HA: Bed unoccupied
+    HA ->>+ Sound: Turn off music
+    Sound -->>- HA: Music off
+    deactivate HA
 	
-	deactivate HA 
 ```
 
 ## C# Code
@@ -135,9 +128,22 @@ public async Task BedAutomation(HomeAssistant.Sensors.BedSensorCorrectedValue be
 ```
 
 ```mermaid
-graph TD
-    Start --> Stop
-    Stop --> Stop
+flowchart  TD
+    InitialTrigger --> InitialBedSensorCheck
+    InitialBedSensorCheck -- false --> NotificationWorkflow
+    InitialBedSensorCheck -- true --> Lights
+    subgraph Human not home
+        NotificationWorkflow --> HaNotif
+    end
+    subgraph Human is home
+        Lights --> Sound
+        Sound --> BedSensorCheck
+    BedSensorCheck -- true --> Wait
+    Wait --> BedSensorCheck
+    BedSensorCheck -- false --> SoundOff
+
+    end
+  
 ```
 
 
